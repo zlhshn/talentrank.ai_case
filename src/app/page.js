@@ -1,6 +1,6 @@
 "use client"
 
-import { useEffect } from "react"; r
+import { useEffect } from "react"; 
 import styles from "./page.module.scss";
 import { useRouter } from "next/navigation";
 
