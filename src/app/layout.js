@@ -1,5 +1,8 @@
 import localFont from "next/font/local";
-import "./globals.css";
+import "./globals.scss";
+import Navbar from "@/components/Navbar/Navbar";
+import Footer from "@/components/Footer/Footer";
+import { Providers } from "@/redux/providers";
 
 const geistSans = localFont({
   src: "./fonts/GeistVF.woff",
@@ -21,7 +24,11 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <body className={`${geistSans.variable} ${geistMono.variable}`}>
+      <Providers>
+        <Navbar/>
         {children}
+        <Footer/>
+        </Providers>
       </body>
     </html>
   );

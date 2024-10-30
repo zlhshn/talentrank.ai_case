@@ -1,0 +1,33 @@
+.grid-cont {
+  // display: grid;
+  // grid-template-columns: 1fr 2fr 0.5fr 2fr 0.5fr 2fr;
+  gap: 25px;
+  padding: 50px 60px;
+  align-items: center;
+  background-color: #ffffff;
+  display: flex;
+  justify-content: space-around;
+
+
+  .back {
+    font-size: 12px;
+  }
+
+  p {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 14px;
+  }
+
+  .line {
+    width: 50px;
+    height: 1px;
+    background-color: gray;
+  }
+  .activeCard{
+    background-color: #EDEBFB;
+    border: 1px solid #a69fd8;
+    transform: scale(1.17);
+}
+}

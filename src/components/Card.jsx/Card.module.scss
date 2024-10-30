@@ -1,0 +1,25 @@
+.container{
+    border-radius: 10px;
+    border: 1px solid gray;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    align-items: start;
+    height: 100px;
+   
+
+}
+
+.title{
+    font-size: 14px;
+    font-weight: 550;
+}
+
+.desc{
+    font-size: 12px;
+}
+
+.activeCard{
+    background-color: purple;
+}

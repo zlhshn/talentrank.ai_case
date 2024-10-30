@@ -1,0 +1,18 @@
+.box {
+  border: 1px solid rgb(149, 118, 161);
+  border-radius: 5px;
+  height: 200px;
+  padding: 8px;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  margin: 5px 0px;
+}
+
+.line {
+  border-bottom: 1px solid rgb(214, 214, 214);
+  margin: 8px -8px;
+  
+}
