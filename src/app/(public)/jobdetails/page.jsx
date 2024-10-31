@@ -15,6 +15,7 @@ import {
   Select,
 } from "@mui/material";
 import { useDispatch, useSelector } from "react-redux";
+import {setJobData} from "../../../redux/features/interviewSlice"
 
 
 const Page = () => {
@@ -39,9 +40,10 @@ const Page = () => {
     
   
   };
+  dispatch(setJobData(data)); 
 
-  console.log(data);
-
+  // console.log(data);
+console.log(jobData);
 
 
   return (

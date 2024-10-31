@@ -13,9 +13,23 @@ import questionStyle from "./Questions.module.scss";
 import ModeEditIcon from "@mui/icons-material/ModeEdit";
 import DragIndicatorIcon from "@mui/icons-material/DragIndicator";
 import ScoreProgress from "../ScoreProgress/ScoreProgress";
+import { useSelector } from "react-redux";
 
 const Questions = ({question}) => {
+  const { jobData } = useSelector((state) => state.interview); 
+  console.log(jobData);
 
+  const handleInputChange = (event) => {
+    const { name, value } = event.target;
+    
+
+    setData((prevData) => ({
+      ...prevData,
+      [name]: value,
+    }));
+    
+  
+  };
 
   return (
     <Box
@@ -39,12 +53,12 @@ const Questions = ({question}) => {
       <Stack display={"flex"} flexDirection={"row"} gap={"5px"}>
         <DragIndicatorIcon />
         <textarea
-          name=""
+          name="question"
           id=""
           cols="80"
           rows="10"
           placeholder={question}
-          disabled
+          onChange={handleInputChange}
         ></textarea>
       </Stack>
       <Stack

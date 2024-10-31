@@ -7,30 +7,29 @@ import ChevronLeftIcon from "@mui/icons-material/ChevronLeft";
 import CustomButton from "../Button/CustomButton";
 import { useDispatch, useSelector } from "react-redux";
 import { usePathname, useRouter } from "next/navigation";
-import { setInterviewData } from "../../redux/features/interviewSlice"; // Gerekirse bu importu ekleyin
+import { setInterviewData } from "../../redux/features/interviewSlice";
 
 const Footer = () => {
   const router = useRouter();
-  const currentPath = usePathname(); 
+  const currentPath = usePathname();
   const dispatch = useDispatch();
-  
- 
- 
-  
-  // const handleProceed = () => {
-  //   console.log("Proceed button clicked"); // Debugging
-  //   console.log({ jobTitle, jobDescription, interviewDuration, jobLocation });
 
-  //   if (currentPath === "/jobdetails") {
-  //     if (jobTitle && jobDescription && interviewDuration && jobLocation) {
- 
-  //       router.push("/configureskillset"); 
-  //     } else {
-  //       alert("Lütfen tüm alanları doldurun!"); // Hata mesajı
-  //     }
-  //   }
-  // };
+  const jobData = useSelector((state) => state.interview.jobData);
+  const { jobTitle, jobDescription, interviewDuration, jobLocation } = jobData;
 
+  const handleProceed = () => {
+    console.log("Proceed button clicked");
+    console.log({ jobTitle, jobDescription, interviewDuration, jobLocation });
+
+    if (currentPath === "/jobdetails") {
+      if (jobTitle && jobDescription && interviewDuration && jobLocation) {
+        router.push("/configureskillset");
+      } else {
+        alert("Lütfen tüm alanları doldurun!");
+      }
+    }
+  };
+console.log(jobData);
   return (
     <Box className={footerstyle.footer}>
       <Box
@@ -54,13 +53,13 @@ const Footer = () => {
           gradient={false}
           onClick={() => console.log("Draft button clicked!")}
         >
-          ADD-INTERVIEW.DRAFTD
+          ADD-INTERVIEW.DRAFT
         </CustomButton>
 
         <CustomButton
           color="#ffffff"
           gradient={true}
-          // Proceed butonuna tıklayınca yönlendirme işlemi
+          onClick={handleProceed}
         >
           ADD-INTERVIEW.PROCEED
         </CustomButton>
